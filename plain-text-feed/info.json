@@ -1,0 +1,64 @@
+{
+  "name": "plain-text-feed",
+  "version": "1.0.0",
+  "label": "Plain Text Feed",
+  "category": "Threat Intelligence",
+  "description": "Plain Text Feed can be used to fetch data from text file from any publicly hosted url.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "tags": [
+    "ThreatIntel"
+  ],
+  "ingestion_preferences": {
+    "modules": [
+      "threat_intel_feeds",
+      "indicators"
+    ]
+  },
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "Specify the server URL to which you will connect and perform the automated operations.",
+        "tooltip": "Specify the server URL to which you will connect and perform the automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true,
+        "value": ""
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specify whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "tooltip": "Specify whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_indicators",
+      "description": "Retrieves the list of IP addresses from the url that you have specified in the configuration.",
+      "category": "investigation",
+      "annotation": "get_indicators",
+      "title": "Get Indicators",
+      "enabled": true,
+      "parameters": [],
+      "output_schema": []
+    }
+  ]
+}
